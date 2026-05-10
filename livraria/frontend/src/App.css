@@ -1,0 +1,74 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: system-ui, -apple-system, sans-serif; background: #f5f5f0; color: #1a1a1a; }
+button { cursor: pointer; border: none; border-radius: 8px; font-size: 14px; transition: all 0.15s; }
+input, select { padding: 10px 14px; border: 1px solid #ddd; border-radius: 8px; font-size: 14px; outline: none; }
+input:focus, select:focus { border-color: #4f46e5; }
+
+/* Navbar */
+.navbar { background: #1a1a2e; color: white; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; height: 56px; }
+.nav-brand { font-size: 18px; font-weight: 600; }
+.nav-links { display: flex; gap: 8px; align-items: center; }
+.nav-links button { background: transparent; color: #ccc; padding: 6px 14px; }
+.nav-links button:hover, .nav-links button.active { background: rgba(255,255,255,0.12); color: white; }
+.nav-links .logout { color: #f87171; }
+.badge { background: #ef4444; color: white; border-radius: 99px; padding: 1px 7px; font-size: 11px; margin-left: 4px; }
+.content { max-width: 1100px; margin: 0 auto; padding: 28px 20px; }
+
+/* Login */
+.login-wrap { min-height: 100vh; display: flex; align-items: center; justify-content: center; background: #f5f5f0; }
+.login-card { background: white; padding: 40px; border-radius: 16px; box-shadow: 0 4px 24px rgba(0,0,0,0.08); width: 360px; }
+.login-card h1 { font-size: 28px; text-align: center; margin-bottom: 6px; }
+.subtitle { text-align: center; color: #666; margin-bottom: 24px; font-size: 14px; }
+.login-card form { display: flex; flex-direction: column; gap: 12px; }
+.login-card input { width: 100%; }
+.login-card button[type=submit] { background: #4f46e5; color: white; padding: 12px; font-size: 15px; margin-top: 4px; }
+.login-card button[type=submit]:hover { background: #4338ca; }
+.toggle-mode { text-align: center; margin-top: 16px; font-size: 13px; color: #666; }
+.toggle-mode button { background: none; color: #4f46e5; padding: 0 4px; font-weight: 600; }
+.hint { text-align: center; font-size: 12px; color: #aaa; margin-top: 12px; }
+.error-msg { background: #fee2e2; color: #991b1b; padding: 10px 14px; border-radius: 8px; font-size: 13px; margin-bottom: 12px; }
+
+/* Catalog */
+.filters { display: flex; gap: 12px; margin-bottom: 24px; }
+.search-input { flex: 1; }
+.book-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 20px; }
+.book-card { background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.06); display: flex; flex-direction: column; }
+.book-card img { width: 100%; height: 160px; object-fit: cover; background: #eee; }
+.book-info { padding: 16px; display: flex; flex-direction: column; gap: 6px; flex: 1; }
+.book-info h3 { font-size: 15px; font-weight: 600; line-height: 1.3; }
+.author { color: #666; font-size: 13px; }
+.genre-tag { background: #ede9fe; color: #5b21b6; font-size: 11px; padding: 2px 8px; border-radius: 99px; width: fit-content; }
+.book-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 4px; }
+.price { font-size: 16px; font-weight: 700; color: #1a1a1a; }
+.stock { font-size: 11px; color: #888; }
+.add-btn { background: #4f46e5; color: white; padding: 10px; width: 100%; margin-top: 8px; font-size: 13px; }
+.add-btn:hover:not(:disabled) { background: #4338ca; }
+.add-btn.added { background: #16a34a; }
+.add-btn:disabled { background: #ccc; cursor: not-allowed; }
+.loading, .empty { color: #888; text-align: center; margin-top: 40px; }
+
+/* Cart */
+.cart-wrap { max-width: 560px; margin: 0 auto; }
+.cart-wrap h2 { margin-bottom: 20px; }
+.cart-item { background: white; border-radius: 10px; padding: 14px 16px; margin-bottom: 10px; display: flex; justify-content: space-between; align-items: center; }
+.remove-btn { background: #fee2e2; color: #991b1b; padding: 6px 10px; font-size: 12px; }
+.cart-total { display: flex; justify-content: space-between; padding: 16px 0; font-size: 17px; border-top: 1px solid #eee; margin-top: 8px; }
+.checkout-btn { background: #16a34a; color: white; padding: 14px; width: 100%; font-size: 16px; margin-top: 12px; }
+.checkout-btn:hover:not(:disabled) { background: #15803d; }
+.checkout-btn:disabled { background: #ccc; }
+.empty-cart { text-align: center; color: #888; margin-top: 60px; font-size: 16px; }
+.success-wrap { display: flex; justify-content: center; margin-top: 60px; }
+.success-card { background: white; padding: 40px; border-radius: 16px; text-align: center; box-shadow: 0 4px 24px rgba(0,0,0,0.08); }
+.success-card h2 { margin-bottom: 12px; }
+.success-card button { background: #4f46e5; color: white; padding: 12px 24px; margin-top: 20px; }
+
+/* Orders */
+.orders-wrap h2 { margin-bottom: 20px; }
+.order-card { background: white; border-radius: 12px; padding: 18px; margin-bottom: 14px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+.order-header { display: flex; justify-content: space-between; margin-bottom: 10px; font-weight: 600; }
+.order-items { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 10px; }
+.order-items span { background: #f3f4f6; border-radius: 6px; padding: 3px 10px; font-size: 13px; }
+.order-footer { display: flex; justify-content: space-between; color: #888; font-size: 13px; }
+.status { padding: 3px 10px; border-radius: 99px; font-size: 12px; }
+.status-confirmed { background: #dcfce7; color: #15803d; }
+.status-pending { background: #fef9c3; color: #854d0e; }
