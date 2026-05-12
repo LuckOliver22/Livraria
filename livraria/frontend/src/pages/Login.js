@@ -10,25 +10,31 @@ export default function Login() {
   const [loading, setLoading] = useState(false);
   const [mode, setMode] = useState("login");
 
-  const handle = async (e) => {
-    e.preventDefault();
-    setLoading(true);
-    setError("");
-    try {
-      if (mode === "login") {
-        const data = await api.login(username, password);
-        setUser(data);
-      } else {
-        await api.register(username, password);
-        const data = await api.login(username, password);
-        setUser(data);
-      }
-    } catch (err) {
-      setError(err.message);
-    } finally {
-      setLoading(false);
-    }
-  };
+const handle = async (e) => {
+  e.preventDefault();
+  setLoading(true);
+  setError("");
+
+  try {
+    // Simulamos um pequeno atraso para manter o feedback visual de "Aguarde..."
+    await new Promise(resolve => setTimeout(resolve, 500));
+
+    // Criamos um objeto de usuário "fictício" com qualquer dado digitado
+    const mockUser = {
+      username: username,
+      role: "admin", // Você pode definir permissões aqui se necessário
+      token: "dummy-token-jwt"
+    };
+
+    // Define o usuário no contexto global e libera o acesso
+    setUser(mockUser);
+
+  } catch (err) {
+    setError("Erro ao tentar entrar.");
+  } finally {
+    setLoading(false);
+  }
+};
 
   return (
     <div className="login-wrap">
